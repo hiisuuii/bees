@@ -2,6 +2,7 @@ package mod.hisui.bees.registry;
 
 import mod.hisui.bees.types.BeeType;
 import net.fabricmc.fabric.api.event.registry.DynamicRegistries;
+import net.minecraft.registry.DefaultedRegistry;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
