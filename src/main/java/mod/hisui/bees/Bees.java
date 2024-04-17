@@ -1,7 +1,9 @@
 package mod.hisui.bees;
 
+import mod.hisui.bees.registry.BeeTypeRegistry;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,6 +18,22 @@ public class Bees implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
+		BeeTypeRegistry.initializeDynamicRegistries();
+
+		ServerLifecycleEvents.SERVER_STARTED.register(server->{
+			server.getRegistryManager()
+					.getOptional(BeeTypeRegistry.BEE_TYPE_KEY)
+					.ifPresent(registry->{
+						registry
+								.streamEntries()
+								.forEach(entry->{
+									System.out.println("Registry Value: " + entry.registryKey()
+											.getValue()
+											.toString()
+									);
+								});
+					});
+		});
 
 		LOGGER.info("Hello Fabric world!");
 	}

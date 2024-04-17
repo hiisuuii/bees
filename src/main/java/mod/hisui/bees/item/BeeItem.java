@@ -2,16 +2,19 @@ package mod.hisui.bees.item;
 
 import mod.hisui.bees.types.BeeType;
 import net.minecraft.item.Item;
+import net.minecraft.recipe.Ingredient;
+import net.minecraft.registry.DynamicRegistryManager;
+import net.minecraft.util.Identifier;
 
 public class BeeItem extends Item {
-    private final BeeType type;
+    private final Identifier beeType;
 
-    public BeeItem(BeeType type, Item.Settings settings) {
+    public BeeItem(Identifier type, Item.Settings settings) {
         super(settings);
-        this.type = type;
+        this.beeType = type;
     }
 
-    public BeeType getType() {
-        return type;
+    public Identifier getType() {
+        return beeType;
     }
 }

@@ -22,7 +22,7 @@
 			"mod.hisui.bees.BeesClient"
 		],
 		"fabric-datagen": [
-			"mod.hisui.bees.BeesDataGenerator"
+			"mod.hisui.bees.data.BeesDataGenerator"
 		]
 	},
 	"mixins": [
