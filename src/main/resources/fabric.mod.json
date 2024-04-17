@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "bees",
+	"version": "${version}",
+	"name": "Bees!",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/bees/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"mod.hisui.bees.Bees"
+		],
+		"client": [
+			"mod.hisui.bees.BeesClient"
+		],
+		"fabric-datagen": [
+			"mod.hisui.bees.BeesDataGenerator"
+		]
+	},
+	"mixins": [
+		"bees.mixins.json",
+		{
+			"config": "bees.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.10",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
