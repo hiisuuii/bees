@@ -26,5 +26,6 @@ public class BeeTypeGenerator extends FabricCodecDataProvider<BeeType> {
     @Override
     protected void configure(BiConsumer<Identifier, BeeType> provider, RegistryWrapper.WrapperLookup lookup) {
         provider.accept(new Identifier("bees:forest"), BeeTypeDefinitions.FOREST);
+        provider.accept(new Identifier("bees:ender"), BeeTypeDefinitions.ENDER);
     }
 }
