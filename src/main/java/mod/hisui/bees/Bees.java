@@ -34,12 +34,6 @@ public class Bees implements ModInitializer {
 		BeeTypeRegistry.initializeDynamicRegistries();
 
 		ServerLifecycleEvents.SERVER_STARTED.register(server->{
-			World wd = server.getWorld(World.OVERWORLD);
-			if (wd != null) {
-				System.out.println(FOREST_BEE.getType(wd));
-				System.out.println(ENDER_BEE.getType(wd));
-				System.out.println(DESERT_BEE.getType(wd));
-			}
 			server.getRegistryManager()
 					.getOptional(BeeTypeRegistry.BEE_TYPE_KEY)
 					.ifPresent(registry->{
