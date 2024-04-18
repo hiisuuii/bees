@@ -1,13 +1,11 @@
 package mod.hisui.bees.types;
 
 import net.minecraft.block.Blocks;
-import net.minecraft.item.Items;
-import net.minecraft.predicate.BlockPredicate;
-import net.minecraft.registry.tag.BlockTags;
 
 public class BeeTypeDefinitions {
-    public static final BeeType FOREST = new BeeType(
-            BlockPredicate.Builder.create().tag(BlockTags.FLOWERS).build(), Items.DIAMOND);
-    public static final BeeType ENDER = new BeeType(
-            BlockPredicate.Builder.create().blocks(Blocks.DRAGON_EGG).build(), Items.ENDER_PEARL);
+    public static final BeeType FOREST = BeeType.builder().identifier("bees","forest").build();
+    public static final BeeType PLAINS = BeeType.builder().identifier("bees","plains").build();
+    public static final BeeType DESERT = BeeType.builder().identifier("bees","desert").build();
+    public static final BeeType MOIST = BeeType.builder().identifier("bees","moist").build();
+    public static final BeeType NETHER = BeeType.builder().identifier("bees","nether").flower(Blocks.NETHER_WART).build();
 }
